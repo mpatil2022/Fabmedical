@@ -6,7 +6,7 @@ const request = require('request');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'dist/content-web')));
-const contentApiUrl = process.env.CONTENT_API_URL || "http://localhost:3001";
+const contentApiUrl = process.env.CONTENT_API_URL || "http://104.45.224.133:3001";
 
 
 function getSessions(cb) {
@@ -76,5 +76,4 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || '3000';
 app.set('port', port);
 
-const server = http.createServer(app);
-server.listen(port, () => console.log('Running'));
+const server = http.createServer(app);server.listen(port, () => console.log('Running'));
